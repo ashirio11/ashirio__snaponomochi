@@ -1,0 +1,243 @@
+@use "sass:map";
+
+$main-color:#9ED0E0;
+$sub-color1:#67B0C7;
+$sub-color2:#CCE1E4;
+$sub-color3:#E9F6F8;
+$accent-color1:#CE2073;
+$accent-color2:#FFEE56;
+$monochrome-color1: #4A3636;
+$monochrome-color2: #CCCCCC;
+$monochrome-color3: #F5F5F5;
+$monochrome-color4: #FFFFFF;
+
+$font-family-ja1: "Noto Sans JP","sans-serif";
+$font-family-ja2:  "Kiwi Maru", serif;
+$font-family-en1: "Courgette", "cursive";
+$font-family-en2:"Josefin Sans", sans-serif;
+
+$breakpoints:(
+    sp:"screen and (min-width:600px)",
+    sp-max:"screen and (max-width:767px)",
+    pc: "screen and (min-width:768px)",
+    lg:"screen and (min-width:900px)",
+    xl:"screen and (min-width:1200px)",
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+
+  .hidden-sp{
+    @include mq(sp-max){
+      display: none;
+    }
+  }
+  .hidden-pc{
+    @include mq(pc){
+      display: none;
+    }
+  }
+
+
+  body{
+    font-size: 12px;
+    color:$monochrome-color1;
+    background-color: $main-color;
+    font-family: $font-family-ja1;
+    line-height: 160%;
+    font-style: normal;
+
+    @include mq(pc){
+        font-size: 16px;
+    }
+  }
+
+  .button{
+    display: inline-flex;
+    height: 32px;
+    padding: 6px 24px 8px 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 2px solid #4A3636;
+    background: #FFF;
+    box-shadow: 0px 4px 0px 0px #4A3636;
+  }
+
+.header__inner{
+    padding: 16px 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mq(pc){
+        padding: 20px 24px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+.header__logo{
+    display: block;
+
+    img{
+        width: 210px;
+
+        @include mq(pc){
+            width: 183px;
+        }
+    }
+}
+
+.header__nav{
+    display: none;
+    @include mq(pc){
+        display: flex;
+        gap: 16px;
+    }
+}
+
+.header__nav__item{
+    @include mq(pc){
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+}
+
+
+.header__link{
+    @include mq(pc){
+        font-weight: 400;
+    }
+}
+
+.drawer-icon{
+    height: 33px;
+    position: relative;
+
+    &.is-checked{
+        .drawer-icon__bar{
+  
+          &:nth-of-type(1){
+            display: none;
+          }
+  
+          &:nth-of-type(2){
+            width: 32px;
+            top: 10px;
+            transform: rotate(45deg);
+           }
+
+           &:nth-of-type(3){
+            display: none;
+           }
+  
+           &:nth-of-type(4){
+            top: 10px;
+            transform: rotate(-45deg);
+           }
+        }
+      }
+}
+
+.header__open{
+    @include mq(pc){
+        display: none;
+    }
+}
+
+.header__button{
+@include mq(pc){
+    height: 36px;
+    padding: 6px 24px 8px 24px;
+}
+}
+
+.drawer-icon__bar{
+    position: absolute;
+    width: 32px;
+    height: 3px;
+    border-radius: 6px;
+    background: $monochrome-color1;
+    top: 2px;
+    right: 0;
+
+    &:nth-of-type(1){
+        right: 6.4px;
+        width: 25.6px;
+        height: 3px;
+        
+    }
+
+    &:nth-of-type(2){
+        width: 4.8px;
+        height: 3px;
+        
+    }
+
+    &:nth-of-type(3){
+        top: 14px;
+       }
+       &:nth-of-type(4){
+        top: 26px;
+       }
+
+}
+
+.drawer-content{
+    padding: 82px 114px;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 707px;
+    position: fixed;
+    top: 64px;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s linear;
+
+    &.is-checked{
+      transform: translateX(0);
+    }
+
+}
+
+.drawer__nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+}
+
+// mvセクション
+
+.mv{
+    background: url(../img/Onomichi-mv-sp.png) no-repeat center center / cover;
+    width: 100%;
+    height: 574px
+}
+
+.mv__inner{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mv__content{
+    padding-top: 17px;
+}
+
+.mv__sub{
+    font-size: 14px;
+    padding-inline: 41.5px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 125%;
+}
+
+.mv__lead{
+    margin-top: 20px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" contents="noindex" />
+    <title>SnapOnomichi</title>
+    <!-- 書式 -->
+     <!-- Noto Sans JP -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Kiwi Maru -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Courgette -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <!-- Josefin Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href=""><img src="./img/img_logo.png" alt=""></a>
+            </h1>
+            <nav class="header__nav">
+                <div class="header__nav__item">
+                <a href="#about" class="header__link">キャンペーンについて</a>
+                <a href="#how-to-use" class="header__link">特典</a>
+                <a href="#favorit" class="header__link">おすすめスポット</a>
+                <a href="#qa" class="header__link">よくある質問</a>
+                <a href="#join" class="header__link">参加要項</a>
+                <a href="#contact" class="header__link">お問い合わせ</a>
+            </div>
+                <a href="#submit" class="header__button button">応募してみる</a>
+            </nav>
+            <button id="js-drawer-icon"  class="header__open drawer-icon">
+                    <span class="drawer-icon__bar"></span>
+                    <span class="drawer-icon__bar"></span>
+                    <span class="drawer-icon__bar"></span>
+                    <span class="drawer-icon__bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ドロワー部分 -->
+    <div id="js-drawer-content" class="drawer-content">
+        <nav class="drawer__nav">
+            <a href="#about" class="drawer__link">キャンペーンについて</a>
+            <a href="#how-to-use" class="drawer__link">特典</a>
+            <a href="#favorit" class="drawer__link">おすすめスポット</a>
+            <a href="#qa" class="drawer__link">よくある質問</a>
+            <a href="#join" class="drawer__link">参加要項</a>
+            <a href="#contact" class="drawer__link">お問い合わせ</a>
+            <a href="#submit" class="drawer__button button">応募してみる</a>
+        </nav>
+      </div>
+
+    <!-- mvセクション -->
+    <section class="mv">
+        <div class="mv__inner">
+            <div class="mv__content">
+                <h2 class="mv__sub">あなたの見つけたレトロな尾道の一枚をInstagramに投稿しよう</h2>
+                <div class="mv__lead">
+                    <p class="mv__lead1"></p>
+                    <p class="mv__lead2"></p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
