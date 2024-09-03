@@ -16,6 +16,7 @@ $font-family-ja2:  "Kiwi Maru", serif;
 $font-family-en1: "Courgette", "cursive";
 $font-family-en2:"Josefin Sans", sans-serif;
 
+
 $breakpoints:(
     sp:"screen and (min-width:600px)",
     sp-max:"screen and (max-width:767px)",
@@ -45,7 +46,7 @@ $breakpoints:(
   body{
     font-size: 12px;
     color:$monochrome-color1;
-    background-color: $main-color;
+    background-color: $sub-color3;
     font-family: $font-family-ja1;
     line-height: 160%;
     font-style: normal;
@@ -54,10 +55,119 @@ $breakpoints:(
         font-size: 16px;
     }
   }
+  .image1{
+    width: 21.718px;
+    @include mq(pc){
+        width: 33.776px;
+    }
+}
+.image2{
+    width: 27.881px;
+    @include mq(pc){
+        width: 43.36px;
+    }
+}
+.image3{
+    width: 28.592px;
+    @include mq(pc){
+        width: 44.467px;
+    }
+}
+.image4{
+    width: 29.962px;
+    @include mq(pc){
+        width: 46.597px;
+    }
+}
+.image5{
+    width: 29.526px;
+    @include mq(pc){
+        width: 45.918px;
+    }
+}
+.image6{
+    width: 37.837px;
+    @include mq(pc){
+        width: 58.844px;
+    }
+}
+.image7{
+    width: 38.052px;
+    @include mq(pc){
+        width: 59.178px;
+    }
+}
+.image8{
+    width: 22.765px;
+    @include mq(pc){
+        width: 35.404px;
+    }
+}
+.image9{
+    width: 14.514px;
+    @include mq(pc){
+        width: 22.573px;
+    }
+}
+.image10{
+    width: 28.653px;
+    @include mq(pc){
+        width: 44.561px;
+    }
+}
 
-  .button{
+.image11{
+    width: 31.107px;
+    @include mq(pc){
+        width: 46.142px;
+    }
+}
+.image12{
+    width: 24.699px;
+    @include mq(pc){
+        width: 36.636px;
+    }
+}
+.image13{
+    width: 32.496px;
+    @include mq(pc){
+        width: 48.203px;
+    }
+}
+.image14{
+    width: 39.78px;
+    @include mq(pc){
+        width: 59.007px;
+    }
+}
+.image15{
+    width: 27.968px;
+    @include mq(pc){
+        width: 41.486px;
+    }
+}
+.image16{
+    width: 32.496px;
+    @include mq(pc){
+        width: 48.203px;
+    }
+}
+.image17{
+    width: 4.014px;
+    @include mq(pc){
+        width: 5.954px;
+    }
+}
+
+.inner{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+  .button1{
     display: inline-flex;
     height: 32px;
+    width: fit-content;
     padding: 6px 24px 8px 24px;
     justify-content: center;
     align-items: center;
@@ -66,6 +176,38 @@ $breakpoints:(
     border: 2px solid #4A3636;
     background: #FFF;
     box-shadow: 0px 4px 0px 0px #4A3636;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .button2{
+    display: inline-flex;
+    height: 40px;
+    width: fit-content;
+    padding: 6px 24px 8px 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 2px solid #4A3636;
+    background: #FFF;
+    box-shadow: 0px 4px 0px 0px #4A3636;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .button3{
+    display: inline-flex;
+    height: 56px;
+    width: fit-content;
+    padding: 10px 40px 12px 40px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 3px solid #4A3636;
+    background: #FFF;
+    box-shadow: 0px 4px 0px 0px #4A3636;
+    font-size: 20px;
+    font-weight: 700;
   }
 
 .header__inner{
@@ -193,12 +335,12 @@ $breakpoints:(
     padding: 82px 114px;
     background-color: #FFFFFF;
     width: 100%;
-    height: 707px;
     position: fixed;
     top: 64px;
     right: 0;
     transform: translateX(100%);
     transition: transform 0.3s linear;
+    z-index: 50;
 
     &.is-checked{
       transform: translateX(0);
@@ -218,26 +360,352 @@ $breakpoints:(
 .mv{
     background: url(../img/Onomichi-mv-sp.png) no-repeat center center / cover;
     width: 100%;
-    height: 574px
-}
-
-.mv__inner{
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-bottom: 156px;
+    @include mq(pc){
+        margin-bottom: 96px;
+    }
 }
 
 .mv__content{
     padding-top: 17px;
+    padding-bottom: 376px;
+    position: relative;
+    @include mq(pc){
+        padding-top: 34px;
+        padding-bottom: 463px;
+        margin-right: 332px;
+        margin-left: 332px;
+    }
 }
 
 .mv__sub{
+    font-family: $font-family-ja2;
     font-size: 14px;
     padding-inline: 41.5px;
     text-align: center;
     font-weight: 400;
     line-height: 125%;
+
+    @include mq(pc){
+        font-size: 24px;
+        font-weight: 500;
+    }
 }
 
 .mv__lead{
     margin-top: 20px;
 }
+
+.mv__lead1{
+    background-color: #fff;
+    width: 335px;
+    height: 53px;
+    display: flex;
+    justify-content: space-between; /* 端と端に寄せて、画像の間に均等な間隔を開ける */
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    
+    @include mq(pc){
+        width: 520px;
+        height: 82px;
+    }
+}
+.mv__lead2{
+    background-color: #fff;
+    margin-top: 12px;
+    height: 40px;
+    width: 245px;
+    display: flex;
+    justify-content: space-between; /* 端と端に寄せて、画像の間に均等な間隔を開ける */
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(pc){
+        margin-top: 16px;
+        width: 356px;
+        height: 60px;
+    }
+}
+
+.fukidashi{
+    position: absolute;
+    top: 196px;
+    left: 0;
+
+    @include mq(pc){
+        top: 242px;
+        left: 37px;
+    }
+    img{
+        width: 142px;
+        @include mq(pc){
+            width: 244px;
+        }
+    }
+}
+
+.present{
+    position: absolute;
+    top: 188px;
+    right: 24.49px;
+    @include mq(pc){
+        top: 257px;
+        right: 127px;
+    }
+    img{
+        width: 110px;
+        @include mq(pc){
+            width: 180px;
+        }
+    }
+}
+.SP{
+    position: absolute;
+    bottom: -145px;
+    left: 50%;
+    transform: translate(-50%);
+    @include mq(pc){
+        bottom: -80px;
+    }
+    img{
+        height: 408px;
+        @include mq(pc){
+            height: 510px;
+        }
+    }
+}
+
+.foods{
+    position: absolute;
+    bottom: -157px;
+    left: 20px;
+    @include mq(pc){
+        bottom: -96px;
+        left: 0;
+    }
+    img{
+        width: 86px;
+        @include mq(pc){
+            width: 202px;
+        }
+    }
+}
+
+.cat2{
+    position: absolute;
+    bottom: -157px;
+    right: 29px;
+    @include mq(pc){
+        bottom: -140px;
+        right: 0;
+    }
+    img{
+        width: 98px;
+        @include mq(pc){
+            width: 233px;
+        }
+    }
+}
+
+.cat1{
+    position: absolute;
+    bottom: -99px;
+    right: 20px;
+    @include mq(pc){
+        right:63px;
+        bottom: -36px;
+    }
+    img{
+        width: 62px;
+        @include mq(pc){
+            width: 170px;
+        }
+    }
+}
+
+// Aboutセクション
+.about{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about__content{
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 40px 37px;
+    margin-bottom: 177px;
+}
+
+.about__img1{
+    position: absolute;
+    top: 31.87px;
+    left: 33px;
+    img{
+        width: 80px;
+    }
+}
+
+.about__img2{
+    position: absolute;
+    top: 31.87px;
+    right: 33px;
+    img{
+        width: 80px;
+    }
+}
+
+.about__main{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+}
+
+.about__head-center{
+    text-align: center;
+}
+
+.about__icon{
+    img{
+        width: 37.333px;
+    }
+}
+
+.about__title{
+    margin-top: 6px;
+    font-family: $font-family-en1;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.about__sub {
+    font-family: $font-family-ja2;
+    font-size: 20px;
+    font-weight: 500; // corrected from 500px to 500
+    line-height: 125%;
+    position: relative;
+    padding-bottom: 6px;
+    width: fit-content;
+    margin:0 auto;
+
+    &::before {
+        bottom: 0; // align with the text
+        left: 0; // start from the left edge of the text
+        position: absolute;
+        width: 100%; // make it the same width as the text
+        height: 6px;
+        content: '';
+        background: $accent-color2;
+    }
+}
+
+.about__text-first{
+    text-align: center;
+    padding-bottom: 24px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.about__description{
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+
+    +.about__description{
+        margin-top: 24px;
+    }
+}
+.bold{
+    font-weight: bold;
+}
+
+.about__text-end{
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed $main-color;
+    white-space: nowrap
+}
+
+.about__button{
+    margin: 0 auto;
+}
+
+
+.about__img-left{
+    position: absolute;
+    top: 395px;
+    left: -140px;
+    z-index: -1;
+    img{
+        width: 200px;
+    }
+}
+
+.about__img-right{
+    position: absolute;
+    right: -140px;
+    top: 273px;
+    z-index: -1;
+    img{
+        width: 200px;
+    }
+}
+
+.about-arrow{
+    position: absolute;
+    top: 722px;
+    left: 50%;
+    transform: translate(-50%);
+
+    img{
+        width: 100px;
+    }
+}
+
+.about-maru2ko{
+    position: absolute;
+    top: 733px;
+    right: 51px;
+
+    img{
+        width: 29.236px;
+    }
+}
+
+.about-marutyari{
+    position: absolute;
+    top: 758px;
+    right: 21px;
+    img{
+        width: 19px;
+    }
+}
+
+.about-goods{
+    position: absolute;
+    top: 780px;
+    right: 65px;
+    img{
+        width: 133px;
+    }
+}
+
+.sakamichi{
+    position: absolute;
+    top: 720px;
+    left: -20px;
+    img{
+        width: 216px;
+    }
+}
+
+
+
+

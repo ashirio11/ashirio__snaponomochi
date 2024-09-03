@@ -5,8 +5,16 @@ jQuery('#js-drawer-content a[href^="#"]').on("click", function (e) {
   });
 
 // ドロワーの表示
-jQuery("#js-drawer-icon").on("click",function (e){
-    e.preventDefault();
-    jQuery("#js-drawer-icon").toggleClass("is-checked");
-    jQuery("#js-drawer-content").toggleClass("is-checked")
-})
+jQuery("#js-drawer-icon").on("click", function (e) {
+  e.preventDefault();
+  jQuery("#js-drawer-icon").toggleClass("is-checked");
+  jQuery("#js-drawer-content").toggleClass("is-checked");
+
+  if (jQuery("#js-drawer-icon").hasClass("is-checked")) {
+      // スクロールを無効にする
+      jQuery("body").css("overflow", "hidden");
+  } else {
+      // スクロールを有効に戻す
+      jQuery("body").css("overflow", "auto");
+  }
+});
