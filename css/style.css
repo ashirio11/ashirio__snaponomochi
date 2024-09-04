@@ -631,9 +631,13 @@ body {
 
 .about {
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 33px;
+}
+
+.about__img-position {
   position: relative;
   overflow: hidden;
+  padding-bottom: 139px;
 }
 
 .about__content {
@@ -748,7 +752,7 @@ body {
 
 .about__img-left {
   position: absolute;
-  top: 395px;
+  top: 362px;
   left: -140px;
   z-index: -1;
 }
@@ -759,7 +763,7 @@ body {
 .about__img-right {
   position: absolute;
   right: -140px;
-  top: 273px;
+  top: 240px;
   z-index: -1;
 }
 .about__img-right img {
@@ -768,7 +772,7 @@ body {
 
 .about-arrow {
   position: absolute;
-  top: 722px;
+  top: 690px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -779,7 +783,7 @@ body {
 
 .about-maru2ko {
   position: absolute;
-  top: 733px;
+  top: 690px;
   right: 51px;
 }
 .about-maru2ko img {
@@ -788,7 +792,7 @@ body {
 
 .about-marutyari {
   position: absolute;
-  top: 758px;
+  top: 722px;
   right: 21px;
 }
 .about-marutyari img {
@@ -797,7 +801,7 @@ body {
 
 .about-goods {
   position: absolute;
-  top: 780px;
+  top: 747px;
   right: 65px;
 }
 .about-goods img {
@@ -806,9 +810,43 @@ body {
 
 .sakamichi {
   position: absolute;
-  top: 720px;
+  top: 690px;
   left: -20px;
+  z-index: 0;
 }
 .sakamichi img {
   width: 216px;
+}
+
+.about_onomichi {
+  position: absolute;
+  z-index: 50;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 335px;
+}
+
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  width: 100px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* アニメーションを追加 */
+}
+
+.swiper-slide {
+  width: 100px;
+}
+.swiper-slide img {
+  width: 100px;
 }

@@ -18,3 +18,15 @@ jQuery("#js-drawer-icon").on("click", function (e) {
       jQuery("body").css("overflow", "auto");
   }
 });
+
+// スライダーの実装
+// var swiper = new Swiper('.about__slider', {
+//   autoplay: {
+//     delay: 0,
+//   },
+//   loop: true,
+//   speed: 3000,
+//   slidesPerView: 3.5,
+//   centeredSlides: true,
+//   preventInteractionOnTransition: true,
+// });
