@@ -19,14 +19,18 @@ jQuery("#js-drawer-icon").on("click", function (e) {
   }
 });
 
-// スライダーの実装
-// var swiper = new Swiper('.about__slider', {
-//   autoplay: {
-//     delay: 0,
-//   },
-//   loop: true,
-//   speed: 3000,
-//   slidesPerView: 3.5,
-//   centeredSlides: true,
-//   preventInteractionOnTransition: true,
-// });
+var swiper = new Swiper('.swiper', {
+  autoplay: {
+    delay: 0,
+  },
+  loop: true,
+  speed: 3500,
+  slidesPerView: 3.5,
+  centeredSlides: true,
+  preventInteractionOnTransition: true,
+  breakpoints: {
+    768: {  // 1024px以上のときに適用する設定
+      slidesPerView: 9
+    }
+  }
+});

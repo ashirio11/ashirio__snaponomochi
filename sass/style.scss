@@ -162,6 +162,10 @@ $breakpoints:(
 .inner{
     padding-left: 20px;
     padding-right: 20px;
+    @include mq(pc){
+        padding-left: 244px;
+        padding-right: 244px;
+    }
 }
 
   .button1{
@@ -193,6 +197,12 @@ $breakpoints:(
     box-shadow: 0px 4px 0px 0px #4A3636;
     font-size: 16px;
     font-weight: 700;
+    @include mq(pc){
+        height: 56px;
+        padding: 10px 40px 12px 40px;
+        border: 3px solid #4A3636;
+        font-size: 20px;
+    }
   }
   .button3{
     display: inline-flex;
@@ -373,8 +383,8 @@ $breakpoints:(
     @include mq(pc){
         padding-top: 34px;
         padding-bottom: 463px;
-        margin-right: 332px;
-        margin-left: 332px;
+        margin-right: 100px;
+        margin-left: 100px;
     }
 }
 
@@ -529,27 +539,47 @@ $breakpoints:(
 .about{
     padding-top: 32px;
     padding-bottom: 33px;
+
+    @include mq(pc){
+        padding-top: 80px;
+        padding-bottom: 0;
+    }
 }
 
 .about__img-position{
     position: relative;
     overflow: hidden;
-    padding-bottom: 139px;
 }
 
 .about__content{
     background-color: #fff;
     border-radius: 24px;
     padding: 40px 37px;
-    margin-bottom: 177px;
+    margin-bottom: 176px;
+    @include mq(pc){
+        border-radius: 40px;
+        padding: 40px 114px;
+        margin-bottom: 258px;
+        width: 848px;
+        height: 829px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .about__img1{
     position: absolute;
     top: 31.87px;
-    left: 33px;
+    left: 34px;
+    @include mq(pc){
+        top: 40px;
+        left: 417px;
+    }
     img{
         width: 80px;
+        @include mq(pc){
+            width: 139px;
+        }
     }
 }
 
@@ -557,8 +587,15 @@ $breakpoints:(
     position: absolute;
     top: 31.87px;
     right: 33px;
+    @include mq(pc){
+        top: 40px;
+        right: 417px;
+    }
     img{
         width: 80px;
+        @include mq(pc){
+            width: 139px;
+        }
     }
 }
 
@@ -567,6 +604,9 @@ $breakpoints:(
     flex-direction: column;
     gap: 24px;
     justify-content: center;
+    @include mq(pc){
+        gap: 32px;
+    }
 }
 
 .about__head-center{
@@ -576,6 +616,9 @@ $breakpoints:(
 .about__icon{
     img{
         width: 37.333px;
+        @include mq(pc){
+            width: 48px;
+        }
     }
 }
 
@@ -584,6 +627,10 @@ $breakpoints:(
     font-family: $font-family-en1;
     font-size: 16px;
     font-weight: 400;
+    @include mq(pc){
+        font-size: 20px;
+        line-height: 125%;
+    }
 }
 
 .about__sub {
@@ -595,6 +642,11 @@ $breakpoints:(
     padding-bottom: 6px;
     width: fit-content;
     margin:0 auto;
+    @include mq(pc){
+        margin-top: 8px;
+        font-size: 32px;
+        padding-bottom: 16px;
+    }
 
     &::before {
         bottom: 0; // align with the text
@@ -604,6 +656,9 @@ $breakpoints:(
         height: 6px;
         content: '';
         background: $accent-color2;
+        @include mq(pc){
+            height: 8px;
+        }
     }
 }
 
@@ -618,9 +673,15 @@ $breakpoints:(
     font-size: 12px;
     font-weight: 400;
     text-align: center;
+    @include mq(pc){
+        font-style: 16px;
+    }
 
     +.about__description{
         margin-top: 24px;
+        @include mq(pc){
+            margin-top: 32px;
+        }
     }
 }
 .bold{
@@ -634,7 +695,12 @@ $breakpoints:(
     font-weight: 700;
     padding-bottom: 8px;
     border-bottom: 2px dashed $main-color;
-    white-space: nowrap
+    white-space: nowrap;
+    @include mq(pc){
+        width: fit-content;
+        font-size: 20px;
+        margin: 0 auto;
+    }
 }
 
 .about__button{
@@ -647,8 +713,15 @@ $breakpoints:(
     top: 362px;
     left: -140px;
     z-index: -1;
+    @include mq(pc){
+        top: 85px;
+        left: -285px;
+    }
     img{
         width: 200px;
+        @include mq(pc){
+            width: 480px;
+        }
     }
 }
 
@@ -657,8 +730,15 @@ $breakpoints:(
     right: -140px;
     top: 240px;
     z-index: -1;
+    @include mq(pc){
+        top:85px;
+        right: -285px;
+    }
     img{
         width: 200px;
+        @include mq(pc){
+            width: 480px;
+        }
     }
 }
 
@@ -667,28 +747,48 @@ $breakpoints:(
     top: 690px;
     left: 50%;
     transform: translate(-50%);
+    @include mq(pc){
+        top: 829px;
+    }
 
     img{
         width: 100px;
+        @include mq(pc){
+            width: 140px;
+        }
     }
 }
 
 .about-maru2ko{
     position: absolute;
-    top: 690px;
+    top: 700px;
     right: 51px;
+    @include mq(pc){
+        top: 621px;
+        right: 189px;
+    }
 
     img{
         width: 29.236px;
+        @include mq(pc){
+            width: 61px;
+        }
     }
 }
 
 .about-marutyari{
     position: absolute;
-    top: 722px;
+    top: 732px;
     right: 21px;
+    @include mq(pc){
+        top: 685px;
+        right: 150px;
+    }
     img{
         width: 19px;
+        @include mq(pc){
+            width: 39.711px;
+        }
     }
 }
 
@@ -696,8 +796,15 @@ $breakpoints:(
     position: absolute;
     top: 747px;
     right: 65px;
+    @include mq(pc){
+        top: 777px;
+        right: 74px;
+    }
     img{
         width: 133px;
+        @include mq(pc){
+            width: 308px;
+        }
     }
 }
 
@@ -706,8 +813,15 @@ $breakpoints:(
     top: 690px;
     left: -20px;
     z-index: 0;
+    @include mq(pc){
+        top: 621px;
+        left: -30px;
+    }
     img{
         width: 216px;
+        @include mq(pc){
+            width: 427px;
+        }
     }
 }
 
@@ -717,7 +831,12 @@ $breakpoints:(
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
-    width: 335px;
+    img{
+        width: 335px;
+        @include mq(pc){
+            width: 890px;
+        }
+    }
 }
 
 .swiper {
@@ -728,13 +847,53 @@ $breakpoints:(
     display: flex;
     gap: 10px;
     width: 100px;
-    transition: transform 0.3s ease; /* アニメーションを追加 */
+    transition-timing-function: linear;
 }
 
 .swiper-slide {
     width: 100px;
     img{
+        @include mq(pc){
+            width: 200px;
+        }
+    }
+}
+
+.slice{
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    z-index: -2;
+    img{
+        width: 250px;
+    }
+}
+.nikukyu{
+    overflow: visible;
+    position: absolute;
+    top: -40px;
+    right: 166px;
+    img{
         width: 100px;
+    }
+}
+
+.line {
+    position: absolute;
+    right: -575px;
+    top: 618px;
+    z-index: -1;
+    img{
+        width: 809px;
+    }
+}
+.line-long {
+    position: absolute;
+    right: -501px;
+    top: 651px;
+    z-index: -1;
+    img{
+        width: 809px;
     }
 }
 
