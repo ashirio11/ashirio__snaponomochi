@@ -24,13 +24,13 @@ var swiper = new Swiper('.swiper', {
     delay: 0,
   },
   loop: true,
-  speed: 3500,
+  speed: 4000,
   slidesPerView: 3.5,
   centeredSlides: true,
   preventInteractionOnTransition: true,
   breakpoints: {
     768: {  // 1024px以上のときに適用する設定
-      slidesPerView: 9
+      slidesPerView: 8
     }
   }
 });
