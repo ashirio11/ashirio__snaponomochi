@@ -24,7 +24,7 @@ var swiper = new Swiper('.swiper', {
     delay: 0,
   },
   loop: true,
-  speed: 4000,
+  speed: 3000,
   slidesPerView: 3.5,
   centeredSlides: true,
   preventInteractionOnTransition: true,
@@ -34,3 +34,13 @@ var swiper = new Swiper('.swiper', {
     }
   }
 });
+
+
+$('.prizes__card').hover(
+  function () {
+    $(this).addClass('hover-border');
+  },
+  function () {
+    $(this).removeClass('hover-border');
+  }
+);

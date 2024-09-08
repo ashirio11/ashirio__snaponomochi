@@ -981,7 +981,7 @@ $breakpoints:(
 }
 
 .how-to-enter__title{
-    margin-top: 8px;
+    margin-top: 5px;
 }
 
 .how-to-enter__content{
@@ -1207,7 +1207,28 @@ $breakpoints:(
 
 // prizesセクション
 .prizes{
-    margin-top: 101px;
+    margin-top: 84px;
+    position: relative;
+    @include mq(pc){
+        margin-top: 156px;
+    }
+}
+
+.triangle1{
+    position: absolute;
+    width: 315px;
+    height: 86px;
+    top: -100px;
+    left: 244px;
+
+}
+.triangle2{
+    position: absolute;
+    width: 315px;
+    height: 86px;
+    top: -100px;
+    right: 244px;
+    transform: rotateY(180deg);
 }
 
 .prizes__background{
@@ -1215,6 +1236,18 @@ $breakpoints:(
     border-radius: 24px;
     text-align: center;
     position: relative;
+    @include mq(pc){
+        width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.prizes__inner{
+    @include mq(pc){
+        padding-left: 56px;
+        padding-right: 56px;
+    }
 }
 
 .prizes__background__img{
@@ -1222,32 +1255,80 @@ $breakpoints:(
     top: -82px; /* 上部に配置 */
     left: 50%;  /* 左右中央に配置 */
     transform: translateX(-50%); /* left 50%の位置から要素の幅の半分を引いて、中央揃え */
+    @include mq(pc){
+        top: -160px;
+    }
+}
+
+.prizes__head-img{
+    width:238px;
+    height: 83px;
+    @include mq(pc){
+        width: calc(365.624px * 1.3);
+        height: calc(148.967px * 1.3);
+    }
 }
 
 .prizes__content{
     position: relative;
+}
+.prizes__icon{
+    img{
+        width: 35px;
+        @include mq(pc){
+            width: 48px;
+        }
+    }
+}
+.prizes__title{
+    margin-top: 9px;
 }
 .prizes__head-center{
     top: -62px;
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
+    @include mq(pc){
+        top: -120px;
+    }
 }
 
 .prizes__text{
     padding-top: 60px;
+    @include mq(pc){
+        padding-top: 65px;
+
+    }
 }
 .prizes__cards{
-    margin-top: 48px;
+    margin-top: 46px;
     display: flex;
     flex-wrap: wrap;
     gap: 39px 15px;
     width: 100%;
     justify-content: center;
+    @include mq(pc){
+        gap: 80px 32px;
+        margin-top: 82px;
+    }
 }
 .prizes__card{
     width: 160px;
     position: relative;
+    &:nth-of-type(1),&:nth-of-type(2){
+        @include mq(pc){
+            width: 440px;
+        }
+    }
+
+    &:nth-of-type(3),&:nth-of-type(4),&:nth-of-type(5){
+        @include mq(pc){
+            width: 280px;
+        }
+    }
+}
+.hover-border{
+    border: 4px solid #9ED0E0;
 }
 .prizes__card-number{
     position: absolute;
@@ -1255,11 +1336,55 @@ $breakpoints:(
     left: 50%;
     transform: translateX(-50%);
 }
+.prizes__card-number1{
+    @include mq(pc){
+        top: -50px;
+    }
+}
+.prizes__card-number2{
+    @include mq(pc){
+        top: -40px;
+    }
+}
+
+.prizes__card-number-img{
+    width: 46px;
+    height: 47px;
+}
+
+.prizes__card-number-img1{
+    @include mq(pc) {
+        width: 100px;
+        height: 100px;
+      }
+}
+.prizes__card-number-img2{
+    @include mq(pc) {
+        width: 80px;
+        height: 80px;
+      }
+}
+
 
 .prizes__main-img{
-    border-radius: 8px;
     img{
         width: 160px;
+    }
+}
+.prizes__main-img1{
+    img{
+        @include mq(pc){
+            width: 100%;
+            height: 340px;
+        }
+    }
+}
+.prizes__main-img2{
+    img{
+        @include mq(pc){
+            width: 100%;
+            height: 240px;
+        }
     }
 }
 .prizes__prizes{
@@ -1278,14 +1403,38 @@ $breakpoints:(
     background-color: #F5F5F5;
     border-radius: 8px;
     position: relative;
+    width: 100%;
     height: 56px;
 }
+.prizes__description1{
+    @include mq(pc){
+        height: 120px;
+    }
+}
+.prizes__description2{
+    @include mq(pc){
+        height: 81px;
+    }
+}
 
-.prizes__serch{
+.prizes__serch-img{
     position: absolute;
-    left: 100%;
-    transform: translateX(-35px);
-    top: 20px;
+    right: 0;
+    bottom: 0;
+    width: 36px;
+    height: 37px;
+}
+.prizes__serch-img1{
+    @include mq(pc){
+        width: 100px;
+        height: 100px;
+    }
+}
+.prizes__serch-img2{
+    @include mq(pc){
+        width: 64px;
+        height: 64px;
+    }
 }
 
 .prizes__description-text{
@@ -1296,10 +1445,23 @@ $breakpoints:(
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    @include mq(pc){
+        font-size: 16px;
+    }
+}
+.prizes__description-text1{
+    @include mq(pc){
+        font-size: 20px;
+    }
 }
 
 .prizes__button{
     margin-top: 18px;
     margin-bottom: 35px;
+
+    @include mq(pc){
+        margin-top: 40px;
+        margin-bottom: 53px;
+    }
 }
 
