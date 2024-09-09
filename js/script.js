@@ -35,7 +35,7 @@ var swiper = new Swiper('.swiper', {
   }
 });
 
-
+// ホバー時の操作
 $('.prizes__card').hover(
   function () {
     $(this).addClass('hover-border');
@@ -44,3 +44,25 @@ $('.prizes__card').hover(
     $(this).removeClass('hover-border');
   }
 );
+
+// モーダルの表示
+$('.prizes__card').each(function(){
+  $(this).on('click', function() {
+  // dataでdata-targetを探す
+  var target = $(this).data('target');
+  // documentが文章全体からgetElementByIdで一致するものを探す
+  var modal = document.getElementById(target);
+  $(modal).fadeIn( 300 );
+  $("body").toggleClass("is-fixed");
+});
+});
+
+$( '.prizes__modal__bg' ).on( 'click', function() {
+  $( '.prizes__modal' ).fadeOut( 300 );
+  $("body").removeClass("is-fixed");
+  });
+
+  $( '.prizes__modal__button' ).on( 'click', function() {
+    $( '.prizes__modal' ).fadeOut( 300 );
+    $("body").removeClass("is-fixed");
+    });
