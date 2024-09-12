@@ -217,8 +217,8 @@ body {
 }
 @media screen and (min-width:768px) {
   .button1 {
-    width: 96px;
-    height: 40px;
+    width: 132px;
+    height: 36px;
   }
 }
 
@@ -1055,11 +1055,11 @@ body {
   }
 }
 
-.swiper {
+.about-swiper {
   overflow: hidden;
 }
 
-.swiper-wrapper {
+.about-swiper-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1069,17 +1069,17 @@ body {
           transition-timing-function: linear;
 }
 @media screen and (min-width:768px) {
-  .swiper-wrapper {
+  .about-swiper-wrapper {
     width: 200px;
     gap: 20px;
   }
 }
 
-.swiper-slide img {
+.about-swiper-slide img {
   width: 100px;
 }
 @media screen and (min-width:768px) {
-  .swiper-slide img {
+  .about-swiper-slide img {
     width: 200px;
   }
 }
@@ -1829,28 +1829,67 @@ body {
 
 .middle__bg {
   position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
+  width: 375px;
+  height: 214px;
+}
+@media screen and (min-width:768px) {
+  .middle__bg {
+    width: 1512px;
+    height: 640px;
+  }
 }
 
 .middle__bg-img {
-  background: url(../img/bg_pic.png);
-  width: 580px;
+  position: absolute;
+  background: url(../img/bg_pic.png) center center no-repeat;
+  width: 375px;
   height: 260px;
-  background-position: 50% -40px;
+  background-position: top -46px left -101px;
   background-repeat: no-repeat;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-size: cover;
 }
 @media screen and (min-width:768px) {
   .middle__bg-img {
-    top: 0;
+    background-position: top 0 left 0;
     width: 1512px;
     height: 640px;
   }
 }
 
 .recommend {
+  margin-bottom: 46px;
   background-color: #67B0C7;
+  position: relative;
+}
+
+.recommend__head__form1 {
+  position: absolute;
+  top: -46px;
+}
+
+.recommend__head__form2 {
+  position: absolute;
+  top: -46px;
+  left: 96px;
+}
+
+.recommend__head__form3 {
+  position: absolute;
+  top: -46px;
+  left: 192px;
+}
+
+.recommend__head__form4 {
+  position: absolute;
+  top: -46px;
+  right: 0;
 }
 
 .recommend__content {
@@ -1858,6 +1897,7 @@ body {
 }
 
 .recommend__title {
+  margin-top: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1869,6 +1909,13 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+}
+@media screen and (min-width:768px) {
+  .recommend__title {
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+  }
 }
 
 .star img {
@@ -1883,11 +1930,25 @@ body {
 }
 
 .recommend__cards {
-  margin-top: 24px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.recommend-swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: flex; /* フレックスボックスを使用 */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; /* 横方向の中央揃え */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* 縦方向の中央揃え */
+  height: 100%; /* スライドの高さを親要素に合わせる */
+}
+
+.recommend-swiper-wrapper {
+  height: 100%; /* スライダーの高さを100%に設定 */
 }
 
 .recommend__card {
@@ -1903,7 +1964,7 @@ body {
 
 .recommend__card-text {
   text-align: center;
-  padding-top: 16px;
+  padding-top: 19px;
   padding-inline: 24px;
   padding-bottom: 51px;
 }
@@ -1914,7 +1975,52 @@ body {
 }
 
 .recommend__card-sub {
-  margin-top: 16px;
+  text-align: left;
+  margin-top: 19px;
   font-size: 12px;
   font-weight: 400;
+}
+
+.recommend__img-sport {
+  text-align: center;
+}
+.recommend__img-sport img {
+  width: 250px;
+}
+
+.recommend__white-text {
+  color: #fff;
+  font-size: 11.444px;
+  font-weight: 400;
+  margin-top: 16px;
+  line-height: 160%;
+  text-align: center;
+}
+
+.recommend__button {
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.recommend__bottom__icon1 {
+  position: absolute;
+  bottom: -46px;
+}
+
+.recommend__bottom__icon2 {
+  position: absolute;
+  bottom: -46px;
+  left: 96px;
+}
+
+.recommend__bottom__icon3 {
+  position: absolute;
+  bottom: -46px;
+  left: 192px;
+}
+
+.recommend__bottom__icon4 {
+  position: absolute;
+  bottom: -46px;
+  right: 0;
 }

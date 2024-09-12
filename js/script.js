@@ -19,7 +19,7 @@ jQuery("#js-drawer-icon").on("click", function (e) {
   }
 });
 
-var swiper = new Swiper('.swiper', {
+var swiper = new Swiper('.about-swiper', {
   autoplay: {
     delay: 0,
   },
@@ -66,3 +66,18 @@ $( '.prizes__modal__bg' ).on( 'click', function() {
     $( '.prizes__modal' ).fadeOut( 300 );
     $("body").removeClass("is-fixed");
     });
+
+  // swiperの作成
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.recommend-swiper', {
+      loop: true,
+      centeredSlides: true,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
