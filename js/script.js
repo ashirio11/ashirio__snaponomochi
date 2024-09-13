@@ -81,3 +81,34 @@ $( '.prizes__modal__bg' ).on( 'click', function() {
       },
     });
   });
+
+// トップボタンの表示・非表示とクリック時のスクロール動作
+jQuery(window).on("scroll", function () {
+  // 300px以上スクロールされた場合、ボタンを表示
+  if (300 < jQuery(window).scrollTop()) {
+    jQuery("#js-page-top").addClass("is-show");
+  } else {
+    // 300px未満の場合、ボタンを非表示
+    jQuery("#js-page-top").removeClass("is-show");
+  }
+});
+
+// ボタンをクリックするとページのトップへスクロール
+jQuery("#js-page-top").click(function () {
+  jQuery("html, body").animate({ scrollTop: 0 }, 300); // 300ミリ秒でトップにスクロール
+});
+
+
+// Q&A実装
+jQuery(".js-accordion").on("click" , function (e){
+  e.preventDefault();
+  if(jQuery(this).parent().hasClass("is-open")){
+          jQuery(this).parent().removeClass("is-open");
+          jQuery(this).next().slideUp();
+  }   
+  else{
+      jQuery(this).parent().addClass("is-open");
+      jQuery(this).next().slideDown();
+  }
+
+})

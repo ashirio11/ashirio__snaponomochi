@@ -1539,68 +1539,125 @@ $breakpoints:(
     overflow: hidden;
 }
 
-.middle__bg{
+.middle__bg {
     position: relative;
-    justify-content:center;
-    align-items: center;
+    width: 100%;
+    padding-top: 57.07%; // 214 / 375 の縦横比を維持
     overflow: hidden;
-    width: 375px;
-    height: 214px;
+
     @include mq(pc) {
-        width: 1512px;
-        height: 640px;
+        padding-top: 42.32%; // PCサイズ用 (640 / 1512 の縦横比)
     }
 }
 
 .middle__bg-img {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 69.33%; // 260 / 375 の縦横比を維持
     background: url(../img/bg_pic.png) center center no-repeat;
-    width: 375px;
-    height: 260px;
     background-position: top -46px left -101px;
-    background-repeat: no-repeat;
     background-size: cover;
 
-    @include mq(pc){
+    @include mq(pc) {
+        padding-top: 42.32%; // PCサイズ用の調整
         background-position: top 0 left 0;
-        width: 1512px;
-        height: 640px;
     }
-
 }
+
 // おすすめセクション
 .recommend{
     margin-bottom: 46px;
     background-color: #67B0C7;
     position: relative;
 }
+
+.recommend__inner{
+    @include mq(pc){
+        padding-right: 0;
+    }
+}
 .recommend__head__form{
 
 }
 
-.recommend__head__form1{
+
+.recommend__head__sp__form1{
     position: absolute;
     top: -46px;
 }
-.recommend__head__form2{
+.recommend__head__sp__form2{
     position: absolute;
     top: -46px;
     left: 96px;
 }
-.recommend__head__form3{
+.recommend__head__sp__form3{
     position: absolute;
     top: -46px;
     left: 192px;
 }
-.recommend__head__form4{
+.recommend__head__sp__form4{
     position: absolute;
     top: -46px;
     right: 0;
 }
+.recommend__head__pc__form{
+    position: absolute;
+    top: -110px;
+    width: 252px;
+    height: 120px;
+    &:nth-child(1){
+        left: 0px;
+    }
+    &:nth-child(2){
+        left: 252px;
+    }
+    &:nth-child(3){
+        left: 504px;
+    }
+    &:nth-child(4){
+        left: 756px;
+    }
+    &:nth-child(5){
+        right: 252px;
+    }
+    &:nth-child(6){
+        right: 0;
+    }
+}
+.recommend__bottom__pc__form{
+    position: absolute;
+    bottom: -110px;
+    width: 252px;
+    height: 120px;
+    transform: rotate(180deg);
+    &:nth-child(1){
+        left: 0px;
+    }
+    &:nth-child(2){
+        left: 252px;
+    }
+    &:nth-child(3){
+        left: 504px;
+    }
+    &:nth-child(4){
+        left: 756px;
+    }
+    &:nth-child(5){
+        right: 252px;
+    }
+    &:nth-child(6){
+        right: 0;
+    }
+}
+
+
 
 .recommend__content{
     overflow: hidden;
 }
+
 .recommend__title{
     margin-top: 3px;
     display: flex;
@@ -1616,33 +1673,85 @@ $breakpoints:(
 .star{
     img{
         width: 28px;
+        @include mq(pc){
+            width: 56px;
+        }
     }
 }
 .recommend__title-text{
     color: #FFF;
     font-size: 28px;
     font-weight: 500;
-    line-height: 125%; 
+    font-family: $font-family-ja2;
+    line-height: 125%;
+    @include mq(pc){
+        margin-top: 10px;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 125%;
+        letter-spacing: 10px;
     }
+}
+
+.recommend__content_pc{
+    @include mq(pc){
+        display: flex;
+        gap: 32px;
+    }
+}
 
 .recommend__cards{
     margin-top: 22px;
     text-align: center;
+    width: calc(100% - 32px);
+    @include mq(pc){
+        margin-top: 0;
+    }
 }
 
 .swiper{
-
+    @include mq(pc){
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        overflow: clip;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+        display: block;
 }
+    }
 
 .recommend-swiper-slide {
+    overflow: clip;
     display: flex;            /* フレックスボックスを使用 */
     justify-content: center;   /* 横方向の中央揃え */
     align-items: center;       /* 縦方向の中央揃え */
     height: 100%;              /* スライドの高さを親要素に合わせる */
+    flex-shrink: 0;
+    @include mq(pc){
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+    }
   }
   
   .recommend-swiper-wrapper {
     height: 100%;              /* スライダーの高さを100%に設定 */
+    @include mq(pc){
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+    box-sizing: content-box;
+    }
   }
   
 
@@ -1651,9 +1760,18 @@ $breakpoints:(
     width: 240px;
     height: 402px;
     border-radius: 12px;
+    @include mq(pc){
+        width: 344px;
+        height: 542px;
+        border-radius: 24px;
+    }
     img{
         border-radius: 12px 12px 0 0;
         width: 240px;
+        @include mq(pc){
+            border-radius: 24px 24px 0 0;
+            width: 344px;
+        }
     }
 }
 
@@ -1662,11 +1780,19 @@ $breakpoints:(
     padding-top: 19px;
     padding-inline: 24px;
     padding-bottom: 51px;
+    @include mq(pc){
+        padding-top: 24px;
+        padding-inline: 32px;
+        padding-bottom: 40px;
+    }
 }
 
 .recommend__card-main{
     font-size: 16px;
     font-weight: 700;
+    @include mq(pc){
+        font-size: 20px;
+    }
 }
 
 .recommend__card-sub{
@@ -1674,14 +1800,34 @@ $breakpoints:(
     margin-top: 19px;
     font-size: 12px;
     font-weight: 400;
+    @include mq(pc){
+        margin-top: 24px;
+        font-size: 16px;
+    }
+}
+
+.reccomend__last__section{
+    @include mq(pc){
+        display: flex;
+        gap: 81px;
+        margin-top:70px;
+    }
 }
 
 .recommend__img-sport{
     text-align: center;
     img{
         width: 250px;
+        @include mq(pc){
+            width: 495px;
+        }
     }
 }
+
+.recommend__last{
+    text-align: center;
+}
+
 .recommend__white-text{
     color: #fff;
     font-size: 11.444px;
@@ -1689,11 +1835,21 @@ $breakpoints:(
     margin-top: 16px;
     line-height: 160%;
     text-align: center;
+    @include mq(pc){
+        font-size: 16px;
+        margin-top: 0;
+    }
 }
 
 .recommend__button{
     margin-bottom: 20px;
     margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq(pc){
+        margin-top: 22px;
+        margin-left: 5px;
+    }
 }
 
 .recommend__bottom__icon1{
@@ -1714,6 +1870,153 @@ $breakpoints:(
     position: absolute;
     bottom: -46px;
     right: 0;
+}
+
+
+
+
+.page-top{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s, visibility 0.7s;
+    z-index: 60;
+    img{
+        width: 100px;
+    }
+
+    &.is-show{
+        opacity: 1;
+        visibility: visible;
+      }
+}
+
+// qaセクション
+.qa{
+    margin-top: 84px;
+    margin-bottom: 31px;
+    @include mq(pc){
+        margin-top: 230px;
+        margin-bottom: 120px;
+    }
+}
+
+.qa__icon{
+    img{
+        width: 38px;
+        @include mq(pc){
+            width: 48px;
+        }
+    }
+}
+
+.qa__icon{
+    margin-top: 10px;
+}
+
+.qa__title{
+    margin-top: 9px;
+}
+
+.qa__boxes{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include mq(pc){
+        margin-top: 20px;
+        gap: 7px;
+    }
+}
+.qa__box{
+    border-radius: 12px;
+    border: 2px solid #4A3636;
+    background: #FFF;
+    @include mq(pc){
+        margin-top: 18px;
+    }
+    &.is-open{
+        .qa-box__head{
+          &::after{
+           background: url(../img/icon-minas.png) no-repeat center center / contain;
+          }
+        }
+    }
+}
+.qa-box__head{
+    padding: 13px calc(16px - 2px) 13px calc(16px - 2px);
+    position: relative;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    @include mq(pc){
+        padding: 24px;
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 25%;
+        right: 14px;
+        background: url(../img/icon-plus.png) no-repeat center center / contain;
+        width: 26.2px;
+        height: 26.2px;
+        @include mq(pc){
+            width: 48px;
+            height: 48px;
+            right: 24px;
+        }
+}
+}
+
+.qa-box__head-text{
+    font-size: 14px;
+    font-weight: 700;
+    width: 233px;
+    text-align: left;
+    @include mq(pc){
+        font-size: 20px;
+        width: 871px;
+    }
+}
+
+.qa-box__body{
+    display: none;
+}
+
+.qa-box__a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 17px calc(16px - 2px) 17px calc(16px - 2px);
+    background-color: #F5F5F5;
+    border-radius: 0 0 15px 15px ;
+    width: 100%;
+    @include mq(pc){
+        padding: 24px;
+    }
+}
+
+.qa-box__a-text{
+    line-height: 170%;
+    font-weight: 400;
+    @include mq(pc){
+        font-size: 16px;
+    }
+}
+
+.qa-box__head-icon,.qa-box__a-icon{
+    font-family: $font-family-en2;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 125%;
+    color: #9ED0E0;
+    @include mq(pc){
+        font-size: 32px;
+    }
 }
 
 
